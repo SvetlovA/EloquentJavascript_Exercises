@@ -8,6 +8,21 @@
     return list;
 }
 
+function arrayToListRec(array, index)
+{
+    var list = {};
+    if (array[index] == undefined)
+    {
+        return null;
+    }
+    else
+    {
+        list.value = array[index];
+        list.rest = arrayToListRec(array, index + 1);
+        return list;
+    }
+}
+
 function listToArray(list)
 {
     var array = [];
@@ -16,6 +31,21 @@ function listToArray(list)
         array.push(node.value);
     }
     return array;
+}
+
+function listToArrayRec(list)
+{
+    var array = [];
+    if (list.rest == null)
+    {
+        return array.concat(list.value);
+    }
+    else
+    {
+        array.push(list.value);
+        array = array.concat(listToArrayRec(list.rest));
+        return array;
+    }
 }
 
 function prepend(value, list)
@@ -33,7 +63,10 @@ function nth(list, index)
     {
         return list.value;
     }
-    return nth(list.rest, index - 1);
+    else
+    {
+        return nth(list.rest, index - 1);
+    }
 }
 
 function inputArray(count)
@@ -63,10 +96,10 @@ function execTask3()
         {
             var array = inputArray(count);
             document.write("Полученные массив: " + array);
-            document.write("<br>Полученный список: " + arrayToList(array));
-            document.write("<br>Массив: " + listToArray(arrayToList(array)));
+            document.write("<br>Полученный список: " + arrayToListRec(array, 0));
+            document.write("<br>Массив: " + listToArrayRec(arrayToListRec(array, 0)));
             document.write("<br>Добавлление: " + prepend(20, null));
-            document.write("<br>Получение 2-ого элемента: " + nth(arrayToList(array), 2));
+            document.write("<br>Получение 2-ого элемента: " + nth(arrayToListRec(array, 0), 2));
         }
         else
         {
