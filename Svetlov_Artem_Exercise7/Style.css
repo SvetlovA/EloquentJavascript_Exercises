@@ -1,0 +1,10 @@
+﻿body {
+}
+
+.no-correct {
+    background-color: red;
+}
+
+.correct {
+    background-color: green;
+}
