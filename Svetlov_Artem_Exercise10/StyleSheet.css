@@ -1,0 +1,9 @@
+﻿.trail { /* className для элементов, летящих за курсором */
+    position: absolute;
+    height: 50px; width: 50px;
+    border-radius: 3px;
+    background: teal;
+  }
+body {
+    height: 800px;
+  }
