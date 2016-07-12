@@ -1,0 +1,14 @@
+﻿#input {
+    width: 50em;
+    height: 20em;
+}
+
+#output {
+    width: 20em;
+    height: 10em;
+}
+
+.work-area > div {
+    display: inline-block;
+    vertical-align: top;
+}

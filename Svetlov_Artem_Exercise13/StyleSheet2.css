@@ -1,0 +1,7 @@
+﻿#suggestions div {
+    width: 13em;
+}
+
+#suggestions div:hover {
+    background-color: gray;
+}
